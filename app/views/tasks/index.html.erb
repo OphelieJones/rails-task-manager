@@ -1,0 +1,14 @@
+<h1>Welcome on the Tasks index page !</h1>
+
+<% @tasks.each do |task| %>
+<li> <%= link_to task.title, task_path(task)  %> - <%= link_to "> Wanna delete ? :(", task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></li>
+
+<% end %>
+
+<p>
+  <%= link_to 'Create a new task :)', new_task_path(@task) %>
+</p>
+
+
